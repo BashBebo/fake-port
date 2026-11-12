@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bashir Abou Chamat | Frontend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E9EEF3; --surface:#F7F9FB; --ink:#13213B; --muted:#4B5A73; --line:#C5D0DC; --accent:#2850D8; --accent-ink:#fff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1726; --surface:#17223A; --ink:#E6ECF5; --muted:#9AA9C2; --line:#2A3957; --accent:#7C9BFF; --accent-ink:#0F1726;}
+}
+:root[data-theme="dark"]{--bg:#0F1726; --surface:#17223A; --ink:#E6ECF5; --muted:#9AA9C2; --line:#2A3957; --accent:#7C9BFF; --accent-ink:#0F1726;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:1.05rem;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;margin:0}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0}
+nav .links{display:flex;gap:1.4rem;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.3rem .8rem;font:inherit;font-size:.85rem;cursor:pointer}
+.hero{padding:4rem 0 5rem}
+.hero h1{font-size:clamp(4.5rem,19vw,13rem);font-weight:800;letter-spacing:-.05em;margin-left:-.05em}
+.hero p.lead{font-size:clamp(1.15rem,2.6vw,1.6rem);max-width:34rem;margin:1.6rem 0 0;color:var(--muted);line-height:1.45}
+.hero p.lead b{color:var(--ink);font-weight:500}
+.meta{margin-top:2rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:.8rem 1.5rem;border-radius:.4rem;text-decoration:none;font-weight:500}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.clock{color:var(--muted);font-size:.95rem}
+section{padding:4rem 0;border-top:1px solid var(--line)}
+section>.wrap{display:grid;grid-template-columns:12rem 1fr;gap:2rem}
+section h2{font-size:1.5rem;letter-spacing:-.01em}
+.body p{margin:0 0 1rem;max-width:40rem}
+.projects{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:.5rem;overflow:hidden}
+.proj{background:var(--surface);padding:1.6rem;display:grid;grid-template-columns:1fr auto;gap:.4rem 1.5rem}
+.proj h3{font-size:1.45rem;letter-spacing:-.02em}
+.proj p{margin:0;color:var(--muted);grid-column:1}
+.proj .tags{grid-row:1/span 2;grid-column:2;text-align:right;color:var(--muted);font-size:.9rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.5rem}
+.skills h3{font-size:1.1rem;margin-bottom:.4rem}
+.skills p{margin:0;color:var(--muted);font-size:.98rem}
+.contact-big{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:clamp(1.6rem,5vw,3rem);font-weight:700;letter-spacing:-.03em;text-decoration-thickness:2px;text-underline-offset:.2em;text-decoration-color:var(--accent)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media(max-width:720px){
+  section>.wrap{grid-template-columns:1fr;gap:1rem}
+  nav .links{display:none}
+  .proj{grid-template-columns:1fr}
+  .proj .tags{grid-row:auto;grid-column:1;text-align:left}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <span>Bashir Abou Chamat</span>
+    <div class="links"><a href="#about">About</a><a href="#work">Work</a><a href="#research">Research</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+    <button class="theme" id="theme" type="button" aria-label="Switch between light and dark theme">Theme</button>
+  </nav>
+
+  <header class="hero">
+    <h1>Bashir.</h1>
+    <p class="lead">I’m a <b>frontend developer</b> in the UAE. I build fast, clean websites and I’m working toward becoming a full software engineer.</p>
+    <div class="meta">
+      <a class="btn" href="#contact">Work with me</a>
+      <a class="btn ghost" href="#work">See my work</a>
+      <span class="clock" id="clock">UAE time</span>
+    </div>
+  </header>
+</div>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <div class="body">
+    <p>I’m a self-taught developer focused on frontend work: HTML, CSS and JavaScript, and building pages that load quickly and look good on a phone first.</p>
+    <p>I’m also interested in how the web stays safe, so I’m learning Linux and cybersecurity alongside JavaScript. Long term, I want to build products and startups.</p>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2>Selected work</h2>
+  <div class="projects">
+    <article class="proj">
+      <h3>Landing page for a local business</h3>
+      <p>A single page built to get a small UAE business more enquiries. Replace this with the real client, what you built and the result.</p>
+      <div class="tags">HTML, CSS, JavaScript</div>
+    </article>
+    <article class="proj">
+      <h3>Your second project</h3>
+      <p>Describe the problem, what you built and what you learned. Two sentences is enough.</p>
+      <div class="tags">Add your stack</div>
+    </article>
+    <article class="proj">
+      <h3>Your third project</h3>
+      <p>Link the live site or the GitHub repo so people can open it in one click.</p>
+      <div class="tags">Add your stack</div>
+    </article>
+  </div>
+</div></section>
+
+<section id="research"><div class="wrap">
+  <h2>Research</h2>
+  <div class="body">
+    <p>I co-authored a research paper on the environmental impact of lead-based perovskite solar cells in UAE date palm ecosystems, and presented it at the University of Sharjah. I was the youngest presenter.</p>
+    <p>The project taught me how to break a big problem into parts, work with data and explain it in plain language, which is the same way I approach code.</p>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><h3>Building</h3><p>HTML, CSS, JavaScript, responsive layouts, landing pages</p></div>
+    <div><h3>Learning now</h3><p>Linux, cybersecurity basics, deeper JavaScript</p></div>
+    <div><h3>How I work</h3><p>Clear communication, quick turnaround, mobile first</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <div class="body">
+    <p>Have a project or an idea? Send me a message.</p>
+    <a class="contact-big" href="mailto:your@email.com">your@email.com</a>
+  </div>
+</div></section>
+
+<div class="wrap"><footer>Bashir Abou Chamat, United Arab Emirates</footer></div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  function dark(){return root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+  btn.addEventListener('click',function(){root.dataset.theme=dark()?'light':'dark'});
+  var el=document.getElementById('clock');
+  function tick(){
+    try{el.textContent='Local time in the UAE: '+new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Dubai',hour:'2-digit',minute:'2-digit'})}
+    catch(e){el.textContent='Based in the UAE'}
+  }
+  tick(); setInterval(tick,30000);
+})();
+</script>
+</body>
+</html>
